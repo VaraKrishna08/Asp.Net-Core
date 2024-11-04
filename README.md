@@ -51,7 +51,7 @@ The application consists of the following six tables, each supporting CRUD opera
      - **Delete**: Remove order details.
 
 5. **Bill**
-   - **Fields**: BillID, OrderID, BillDate, TotalAmount, PaymentMode
+   - **Fields**: BillID,BillNumber, OrderID, BillDate, TotalAmount, PaymentMode,UserID
    - **CRUD Operations**:
      - **Create**: Generate bills for orders.
      - **Read**: View billing information.
@@ -59,7 +59,7 @@ The application consists of the following six tables, each supporting CRUD opera
      - **Delete**: Cancel bills.
 
 6. **Customer**
-   - **Fields**: CustomerID, CustomerName, CustomerEmail, PhoneNumber
+   - **Fields**: CustomerID, CustomerName, HomeAddress,Email,MobileNo,Gst_No CityName,Pincode,Netamount,UserID
    - **CRUD Operations**:
      - **Create**: Add new customers.
      - **Read**: View customer details and lists.
