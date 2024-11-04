@@ -1,0 +1,213 @@
+﻿@model Demo_Project.Models.OrderDetailModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="card shadow-lg mx-auto" style="border-radius: 15px; background: linear-gradient(145deg, #fff, #e3f2fd); max-width: 700px; margin-top: 10px;">
+    <div class="card-header text-white text-center" style="background: linear-gradient(to right, #8e44ad, #3498db); border-radius: 15px 15px 0 0; padding: 1.5rem;">
+        <h4 class="mb-0 font-weight-bold">Add Order Detail</h4>
+    </div>
+    <div class="card-body" style="padding: 1.5rem;">
+
+        <!-- Form -->
+        <form method="post" asp-action="OrderDetailSave">
+            <!-- Hidden OrderDetailID field (for edit cases) -->
+            <input type="hidden" asp-for="OrderDetailID" />
+
+            <div class="row mb-3">
+                <!-- Order ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="OrderID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Order ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", "OrderNumber"))" style="border-radius: 10px;">
+                        <option value="">Select Order</option>
+                    </select>
+                    <span asp-validation-for="OrderID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Product ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="ProductID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Product ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ProductList, "ProductID", "ProductName"))" style="border-radius: 10px;">
+                        <option value="">Select Product</option>
+                    </select>
+                    <span asp-validation-for="ProductID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Quantity -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Quantity" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Quantity
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="Quantity" placeholder="Enter quantity" style="border-radius: 10px;" id="Quantity" oninput="calculateTotalAmount()">
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Amount -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Amount" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Amount
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="Amount" placeholder="Enter amount" style="border-radius: 10px;" id="Amount" oninput="calculateTotalAmount()">
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Total Amount (Read-only, calculated dynamically) -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="TotalAmount" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Total Amount
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="TotalAmount" placeholder="Enter total amount" style="border-radius: 10px;" id="TotalAmount" readonly>
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- User ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="UserID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> User ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))" style="border-radius: 10px;">
+                        <option value="">Select User</option>
+                    </select>
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-group text-center">
+                <a class="btn btn-sm btn-outline-danger shadow-sm mx-1" asp-controller="OrderDetail" asp-action="OrderDetailsList" style="border-radius: 8px; padding: 0.5rem 1.5rem;">Back</a>
+                <button type="submit" class="btn btn-sm btn-gradient shadow-sm mx-1" style="border-radius: 8px; padding: 0.5rem 1.5rem; background: linear-gradient(to right, #f39c12, #e74c3c); color: white;" onclick="return confirm('Are you sure you want to save this Order Detail?');">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function calculateTotalAmount() {
+        var quantity = parseFloat(document.getElementById('Quantity').value) || 0;
+        var amount = parseFloat(document.getElementById('Amount').value) || 0;
+        var totalAmount = quantity * amount;
+        document.getElementById('TotalAmount').value = totalAmount.toFixed(2);
+    }
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+<!-- Custom CSS for Compact Styling -->
+<style>
+    .form-control, .btn {
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        border-color: #3498db;
+    }
+
+    .btn-gradient {
+        background-color: #3498db;
+        background-image: linear-gradient(to right, #f39c12, #e74c3c);
+    }
+
+    .btn-gradient:hover {
+        background-image: linear-gradient(to right, #f39c12, #d35400);
+    }
+
+    .card {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn:hover, .form-control:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+@* @model Demo_Project.Models.OrderDetailModel
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Add Order Details</h5>
+
+        <!-- General Form Elements -->
+        <form asp-controller="OrderDetail" asp-action="OrderDetailSave" method="post">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="OrderDetailID" />
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Order ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", "OrderNumber"))">
+                        <option value="">Select Order</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Product ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ProductList, "ProductID", "ProductName"))">
+                        <option value="">Select Product</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Quantity</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Quantity">
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Amount</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Amount">
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Total Amount</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="TotalAmount">
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>User ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                        <option value="">Select User</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <a class="btn btn-success" asp-controller="OrderDetail" asp-action="OrderDetailsList">Back</a>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+
+        </form><!-- End General Form Elements -->
+
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+} *@
