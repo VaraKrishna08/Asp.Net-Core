@@ -1,0 +1,128 @@
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\appsettings.json
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.staticwebassets.runtime.json
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.exe
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.deps.json
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.runtimeconfig.json
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.pdb
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfoInputs.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfo.cs
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.CoreCompileInputs.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cs
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.Demo_Project.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.build.Demo_Project.props
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Demo_Project.props
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Demo_Project.props
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\bundle\Demo_Project.styles.css
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\projectbundle\Demo_Project.bundle.scp.css
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.dll
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\refint\Demo_Project.dll
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.pdb
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.genruntimeconfig.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\ref\Demo_Project.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bitma\source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.AssemblyReference.cache
+C:\Users\bitma\source\repos\Demo_Project\obj\Debug\net8.0\Demo_Pro.D931FEFE.Up2Date
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\appsettings.Development.json
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\appsettings.json
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.staticwebassets.runtime.json
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.exe
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.deps.json
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.runtimeconfig.json
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Demo_Project.pdb
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\ClosedXML.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\ExcelNumberFormat.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\Irony.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\SixLabors.Fonts.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\System.Data.SqlClient.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\System.IO.Packaging.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\XLParser.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\bitma\Source\repos\Demo_Project\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.AssemblyReference.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.GeneratedMSBuildEditorConfig.editorconfig
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfoInputs.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfo.cs
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.CoreCompileInputs.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.MvcApplicationPartsAssemblyInfo.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cs
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.build.json
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.development.json
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.Demo_Project.Microsoft.AspNetCore.StaticWebAssets.props
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.build.Demo_Project.props
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Demo_Project.props
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Demo_Project.props
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\staticwebassets.pack.json
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\bundle\Demo_Project.styles.css
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\scopedcss\projectbundle\Demo_Project.bundle.scp.css
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Pro.D931FEFE.Up2Date
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.dll
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\refint\Demo_Project.dll
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.pdb
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\Demo_Project.genruntimeconfig.cache
+E:\bitma\Source\repos\Demo_Project\obj\Debug\net8.0\ref\Demo_Project.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\appsettings.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.staticwebassets.runtime.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.exe
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.deps.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.runtimeconfig.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Demo_Project.pdb
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\Irony.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\XLParser.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.AssemblyReference.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfoInputs.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.AssemblyInfo.cs
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.csproj.CoreCompileInputs.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.RazorAssemblyInfo.cs
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.Demo_Project.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.build.Demo_Project.props
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Demo_Project.props
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Demo_Project.props
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\scopedcss\bundle\Demo_Project.styles.css
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\scopedcss\projectbundle\Demo_Project.bundle.scp.css
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Pro.D931FEFE.Up2Date
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\refint\Demo_Project.dll
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.pdb
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\Demo_Project.genruntimeconfig.cache
+C:\Users\bitma\OneDrive\Desktop\sem 5\Demo_Project\obj\Debug\net8.0\ref\Demo_Project.dll
