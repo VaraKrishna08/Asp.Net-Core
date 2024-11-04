@@ -1,0 +1,252 @@
+﻿@model Demo_Project.Models.CustomerModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="card shadow-lg mx-auto" style="border-radius: 15px; background: linear-gradient(145deg, #fff, #e3f2fd); max-width: 700px; margin-top: 10px;">
+    <div class="card-header text-white text-center" style="background: linear-gradient(to right, #8e44ad, #3498db); border-radius: 15px 15px 0 0; padding: 1.5rem;">
+        <h4 class="mb-0 font-weight-bold">Add Customer</h4>
+    </div>
+    <div class="card-body" style="padding: 1.5rem;">
+
+        <!-- Form -->
+        <form method="post" asp-action="CustomerSave">
+            <!-- Hidden CustomerID field (for edit cases) -->
+            <input type="hidden" asp-for="CustomerID" />
+
+            <div class="row mb-3">
+                <!-- Customer Name -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="CustomerName" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Customer Name
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="CustomerName" placeholder="Enter customer name" style="border-radius: 10px;">
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Home Address -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="HomeAddress" class="form-label font-weight-bold text-dark">
+                        Home Address
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="HomeAddress" placeholder="Enter home address" style="border-radius: 10px;">
+                    <span asp-validation-for="HomeAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Email -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Email" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Email
+                    </label>
+                    <input type="email" class="form-control shadow-sm" asp-for="Email" placeholder="Enter email address" style="border-radius: 10px;">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Mobile No -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="MobileNo" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Mobile No
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="MobileNo" placeholder="Enter mobile number" style="border-radius: 10px;">
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- GST NO -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="GST_NO" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> GST NO
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="GST_NO" placeholder="Enter GST number" style="border-radius: 10px;">
+                    <span asp-validation-for="GST_NO" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- City Name -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="CityName" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> City Name
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="CityName" placeholder="Enter city name" style="border-radius: 10px;">
+                    <span asp-validation-for="CityName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Pin Code -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Pincode" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Pin Code
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="Pincode" placeholder="Enter pin code" style="border-radius: 10px;">
+                    <span asp-validation-for="Pincode" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Net Amount -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="NetAmount" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Net Amount
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="NetAmount" placeholder="Enter net amount" style="border-radius: 10px;">
+                    <span asp-validation-for="NetAmount" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- User ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="UserID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> User ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))" style="border-radius: 10px;">
+                        <option value="">Select User</option>
+                    </select>
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-group text-center">
+                <a class="btn btn-sm btn-outline-danger shadow-sm mx-1" asp-controller="Customer" asp-action="CustomerList" style="border-radius: 8px; padding: 0.5rem 1.5rem;">Back</a>
+                <button type="submit" class="btn btn-sm btn-gradient shadow-sm mx-1" style="border-radius: 8px; padding: 0.5rem 1.5rem; background: linear-gradient(to right, #f39c12, #e74c3c); color: white;" onclick="return confirm('Are you sure you want to save this Customer?');">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+<!-- Custom CSS for Compact Styling -->
+<style>
+    .form-control, .btn {
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        border-color: #3498db;
+    }
+
+    .btn-gradient {
+        background-color: #3498db;
+        background-image: linear-gradient(to right, #f39c12, #e74c3c);
+    }
+
+    .btn-gradient:hover {
+        background-image: linear-gradient(to right, #f39c12, #d35400);
+    }
+
+    .card {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn:hover, .form-control:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+@* @model Demo_Project.Models.CustomerModel
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Add Customer</h5>
+
+        <!-- General Form Elements -->
+        <form asp-controller="Customer" asp-action="CustomerSave" method="post">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="CustomerID" />
+                <label for="inputText" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Customer Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="CustomerName">
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">HomeAddress</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="HomeAddress">
+                    <span asp-validation-for="HomeAddress" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" asp-for="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Mobile No</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="MobileNo">
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>GST NO</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="GST_NO">
+                    <span asp-validation-for="GST_NO" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label"><span class="text-danger">*</span>City Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="CityName">
+                    <span asp-validation-for="CityName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Pin Code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Pincode">
+                    <span asp-validation-for="Pincode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Net Amount</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="NetAmount">
+                    <span asp-validation-for="NetAmount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>User ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                        <option value="">Select User</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <a class="btn btn-success" asp-controller="Customer" asp-action="CustomerList">Back</a>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+
+        </form><!-- End General Form Elements -->
+
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+} *@
