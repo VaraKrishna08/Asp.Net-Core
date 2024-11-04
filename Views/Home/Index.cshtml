@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Coffee Shop - Welcome";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* General body styling */
+        body {
+            background-image: url('https://i.etsystatic.com/32576242/r/il/1e767f/3645346665/il_794xN.3645346665_tuu1.jpg');
+            background-size: cover; /* Ensure the background covers the entire screen */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            margin: 0;
+            height: 140vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Space out content vertically */
+        }
+
+        /* Hero Section styling */
+        .hero-section {
+            padding: 100px 0;
+            color: black;
+            text-align: center;
+            backdrop-filter: blur(5px); /* Optional: add a blur effect */
+        }
+
+            .hero-section h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+
+        /* Content Section styling */
+        .content-section {
+            text-align: center;
+            padding: 40px 20px; /* Added padding for better spacing */
+            flex: 1; /* Allow this section to grow and fill available space */
+             background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+             border-radius: 10px;
+            margin: 20px; /* Add some margin around the content */
+        }
+
+            .content-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+                color: darkorchid;
+            }
+
+        .content-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Individual Card styling */
+        .custom-card {
+            width: 250px;
+            border-radius: 10px;
+            background: #ffffff;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .custom-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            }
+
+        .icon-style {
+            font-size: 40px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .btn-custom {
+            background-color: #FF6B6B;
+            color: white;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-custom:hover {
+                background-color: #FF4E4E;
+            }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Welcome to CoffeeShop</h1>
+            <p class="lead">Experience the finest blends and delightful brews.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <h2>Explore Our Coffee Shop</h2>
+        <div class="content-cards">
+            <!-- Products Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-cup-straw icon-style"></i>
+                    <h5 class="card-title">Products</h5>
+                    <a href="@Url.Action("ProductList", "Product")" class="btn btn-custom">View Products</a>
+                </div>
+            </div>
+
+            <!-- Users Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-people-fill icon-style"></i>
+                    <h5 class="card-title">Users</h5>
+                    <a href="@Url.Action("UserList", "User")" class="btn btn-custom">Manage Users</a>
+                </div>
+            </div>
+
+            <!-- Orders Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-journal-text icon-style"></i>
+                    <h5 class="card-title">Orders</h5>
+                    <a href="@Url.Action("OrderList", "Order")" class="btn btn-custom">View Orders</a>
+                </div>
+            </div>
+
+            <!-- Order Details Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-card-checklist icon-style"></i>
+                    <h5 class="card-title">Order Details</h5>
+                    <a href="@Url.Action("OrderDetailList", "OrderDetail")" class="btn btn-custom">Order Details</a>
+                </div>
+            </div>
+
+            <!-- Customers Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-lines-fill icon-style"></i>
+                    <h5 class="card-title">Customers</h5>
+                    <a href="@Url.Action("CustomerList", "Customer")" class="btn btn-custom">View Customers</a>
+                </div>
+            </div>
+
+            <!-- Bills Card -->
+            <div class="card custom-card shadow h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-receipt-cutoff icon-style"></i>
+                    <h5 class="card-title">Bills</h5>
+                    <a href="@Url.Action("BillList", "Bill")" class="btn btn-custom">View Bills</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>
