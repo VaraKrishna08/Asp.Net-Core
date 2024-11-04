@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Register.cshtml";
+}
+
+@model Demo_Project.Models.UserRegisterModel
+
+<main>
+    <div class="container">
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                       
+
+                        <div class="card shadow-lg rounded-3">
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2 text-center">
+                                    <h5 class="card-title fs-4">Create Your Account</h5>
+                                    <p class="text-muted small">Please fill in your details below.</p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" asp-controller="User" asp-action="UserRegister" novalidate>
+                                    <div class="col-12">
+                                        <label for="yourName" class="form-label">Username</label>
+                                        <input type="text" asp-for="UserName" class="form-control" id="yourName" required>
+                                        <span class="text-danger" asp-validation-for="UserName"></span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Password</label>
+                                        <input type="password" asp-for="Password" class="form-control" id="yourPassword" required>
+                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Email</label>
+                                        <input type="email" asp-for="Email" class="form-control" id="yourEmail" required>
+                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourMobile" class="form-label">Mobile Number</label>
+                                        <input type="tel" asp-for="MobileNo" class="form-control" id="yourMobile" required>
+                                        <span class="text-danger" asp-validation-for="MobileNo"></span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourAddress" class="form-label">Address</label>
+                                        <input type="text" asp-for="Address" class="form-control" id="yourAddress" required>
+                                        <span class="text-danger" asp-validation-for="Address"></span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                                            <label class="form-check-label" for="acceptTerms">I agree to the <a href="#">terms and conditions</a></label>
+                                            <div class="invalid-feedback">You must agree before submitting.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <p class="small mb-0">Already have an account? <a asp-controller="User" asp-action="Login">Log in</a></p>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Custom CSS for styling -->
+<style>
+    .card {
+        background: linear-gradient(145deg, #ffffff, #e6f7ff);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background: linear-gradient(to right, #007bff, #0056b3);
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(to right, #0056b3, #007bff);
+        transition: background 0.3s ease;
+    }
+</style>

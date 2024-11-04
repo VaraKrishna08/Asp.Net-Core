@@ -1,0 +1,187 @@
+﻿@model Demo_Project.Models.UserModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="card shadow-lg mx-auto" style="border-radius: 15px; background: linear-gradient(145deg, #fff, #e3f2fd); max-width: 700px; margin-top: 10px;">
+    <div class="card-header text-white text-center" style="background: linear-gradient(to right, #8e44ad, #3498db); border-radius: 15px 15px 0 0; padding: 1.5rem;">
+        <h4 class="mb-0 font-weight-bold">Add User</h4>
+    </div>
+    <div class="card-body" style="padding: 1.5rem;">
+
+        <!-- Form -->
+        <form method="post" asp-action="UserSave">
+            <!-- Hidden UserID field (for edit cases) -->
+            <input type="hidden" asp-for="UserID" />
+
+            <div class="row mb-3">
+                <!-- User Name -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="UserName" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> User Name
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="UserName" placeholder="Enter user name" style="border-radius: 10px;">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Email -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Email" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Email
+                    </label>
+                    <input type="email" class="form-control shadow-sm" asp-for="Email" placeholder="Enter email address" style="border-radius: 10px;">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Password" class="form-label font-weight-bold text-dark">
+                        Password
+                    </label>
+                    <input type="password" class="form-control shadow-sm" asp-for="Password" placeholder="Enter new password to change" style="border-radius: 10px;">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <small class="form-text text-muted">Leave empty to keep the current password.</small>
+                </div>
+            </div>
+
+
+
+
+            <div class="row mb-3">
+                <!-- Mobile No -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="MobileNo" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Mobile No
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="MobileNo" placeholder="Enter mobile number" style="border-radius: 10px;">
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Address -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="Address" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Address
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="Address" placeholder="Enter address" style="border-radius: 10px;">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Is Active -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="IsActive" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Is Active
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="IsActive" style="border-radius: 10px;">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-group text-center">
+                <a class="btn btn-sm btn-outline-danger shadow-sm mx-1" asp-controller="User" asp-action="UserList" style="border-radius: 8px; padding: 0.5rem 1.5rem;">Back</a>
+                <button type="submit" class="btn btn-sm btn-gradient shadow-sm mx-1" style="border-radius: 8px; padding: 0.5rem 1.5rem; background: linear-gradient(to right, #f39c12, #e74c3c); color: white;" onclick="return confirm('Are you sure you want to save this User?');">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<!-- Custom CSS for Compact Styling -->
+<style>
+    .form-control, .btn {
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        border-color: #3498db;
+    }
+
+    .btn-gradient {
+        background-color: #3498db;
+        background-image: linear-gradient(to right, #f39c12, #e74c3c);
+    }
+
+    .btn-gradient:hover {
+        background-image: linear-gradient(to right, #f39c12, #d35400);
+    }
+
+    .card {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn:hover, .form-control:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+@* @model Demo_Project.Models.UserModel
+
+
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Mobile No</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="MobileNo" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Address">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="isActive" class="col-sm-2 col-form-label">Is Active</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="IsActive">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <a class="btn btn-danger mb-3" asp-controller="User" asp-action="UserList">Back</a>
+                    <button type="submit" class="btn btn-success mb-3" onclick="return confirm('Are you sure you want to save this User?');">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+ *@
