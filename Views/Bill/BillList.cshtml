@@ -1,0 +1,57 @@
+﻿@model DataTable;
+@using System.Data;
+
+<h5>Bill List</h5>
+
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="d-flex justify-content-end align-items-center mb-3">
+    <a class="btn btn-primary" asp-controller="Bill" asp-action="BillAddEdit">
+        <span>Add Bill</span>
+    </a>
+    <a class="btn btn-success ms-2" asp-controller="Bill" asp-action="ExportToExcel">
+        <span>Export to Excel</span>
+    </a>
+</div>
+
+<!-- Card-based layout for displaying bills -->
+<div class="row">
+    @foreach (DataRow dr in Model.Rows)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Bill #@dr["BillNumber"]</h5>
+                    <p class="card-text"><strong>Bill ID:</strong> @dr["BillID"]</p>
+                    <p class="card-text"><strong>Bill Date:</strong> @dr["BillDate"]</p>
+                    <p class="card-text"><strong>Order ID:</strong> @dr["OrderID"]</p>
+                    <p class="card-text"><strong>Total Amount:</strong> $@dr["TotalAmount"]</p>
+                    <p class="card-text"><strong>Discount:</strong> $@dr["Discount"]</p>
+                    <p class="card-text"><strong>Net Amount:</strong> $@dr["NetAmount"]</p>
+                    <p class="card-text"><strong>UserID:</strong> @dr["UserID"]</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a class="btn btn-outline-success btn-sm" asp-controller="Bill" asp-action="BillAddEdit" asp-route-BillID="@dr["BillID"]">
+                        <i class="bi bi-pencil-fill"></i> Edit
+                    </a>
+                    <a class="btn btn-outline-danger btn-sm" asp-controller="Bill" asp-action="BillDelete" asp-route-BillID="@dr["BillID"]" onclick="return confirm("Are you sure you want to delete this bill?");">
+                        <i class="bi bi-trash-fill"></i> Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+ 
+</div>
