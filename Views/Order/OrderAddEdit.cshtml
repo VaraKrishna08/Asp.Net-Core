@@ -1,0 +1,219 @@
+﻿@model Demo_Project.Models.OrderModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="card shadow-lg mx-auto" style="border-radius: 15px; background: linear-gradient(145deg, #fff, #e3f2fd); max-width: 700px; margin-top: 10px;">
+    <div class="card-header text-white text-center" style="background: linear-gradient(to right, #8e44ad, #3498db); border-radius: 15px 15px 0 0; padding: 1.5rem;">
+        <h4 class="mb-0 font-weight-bold">Add Order</h4>
+    </div>
+    <div class="card-body" style="padding: 1.5rem;">
+
+        <!-- Form -->
+        <form asp-controller="Order" asp-action="OrderSave" method="post">
+            <!-- Hidden OrderID field (for edit cases) -->
+            <input type="hidden" asp-for="OrderID" />
+
+            <div class="row mb-3">
+                <!-- Order Date -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="OrderDate" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Order Date
+                    </label>
+                    <input type="date" class="form-control shadow-sm" asp-for="OrderDate" style="border-radius: 10px;">
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Order Number -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="OrderNumber" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Order Number
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="OrderNumber" placeholder="Enter order number" style="border-radius: 10px;">
+                    <span asp-validation-for="OrderNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Customer ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="CustomerID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Customer ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.CustomerList, "CustomerID", "CustomerName"))" style="border-radius: 10px;">
+                        <option value="">Select Customer</option>
+                    </select>
+                    <span asp-validation-for="CustomerID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Payment Mode -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="PaymentMode" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Payment Mode
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="PaymentMode" placeholder="Enter payment mode" style="border-radius: 10px;">
+                    <span asp-validation-for="PaymentMode" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Total Amount -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="TotalAmount" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Total Amount
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="TotalAmount" placeholder="Enter total amount" style="border-radius: 10px;">
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Shipping Address -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="ShippingAddress" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> Shipping Address
+                    </label>
+                    <input type="text" class="form-control shadow-sm" asp-for="ShippingAddress" placeholder="Enter shipping address" style="border-radius: 10px;">
+                    <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- User ID -->
+                <div class="form-group col-md-12 mb-3">
+                    <label for="UserID" class="form-label font-weight-bold text-dark">
+                        <span class="text-danger">*</span> User ID
+                    </label>
+                    <select class="form-control shadow-sm" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))" style="border-radius: 10px;">
+                        <option value="">Select User</option>
+                    </select>
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-group text-center">
+                <a class="btn btn-sm btn-outline-danger shadow-sm mx-1" asp-controller="Order" asp-action="OrderList" style="border-radius: 8px; padding: 0.5rem 1.5rem;">Back</a>
+                <button type="submit" class="btn btn-sm btn-gradient shadow-sm mx-1" style="border-radius: 8px; padding: 0.5rem 1.5rem; background: linear-gradient(to right, #f39c12, #e74c3c); color: white;" onclick="return confirm('Are you sure you want to save this Order?');">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<!-- Custom CSS for Compact Styling -->
+<style>
+    .form-control, .btn {
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        border-color: #3498db;
+    }
+
+    .btn-gradient {
+        background-color: #3498db;
+        background-image: linear-gradient(to right, #f39c12, #e74c3c);
+    }
+
+    .btn-gradient:hover {
+        background-image: linear-gradient(to right, #f39c12, #d35400);
+    }
+
+    .card {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn:hover, .form-control:hover {
+        transform: scale(1.02);
+    }
+</style>
+
+@* @model Demo_Project.Models.OrderModel
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Add Order</h5>
+
+        <!-- General Form Elements -->
+        <form asp-controller="Order" asp-action="OrderSave" method="post">
+            <div class="row mb-3">
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="hidden" class="form-control" asp-for="OrderID">
+                    </div>
+                </div>                
+                <label for="inputDate" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Order Date</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" asp-for="OrderDate">
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Order Number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="OrderNumber">
+                    <span asp-validation-for="OrderNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>Customer ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.CustomerList, "CustomerID", "CustomerName"))">
+                        <option value="">Select Customer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Paymennt Mode</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="PaymentMode">
+                    <span asp-validation-for="PaymentMode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Total Amount</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="TotalAmount">
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label"><span class="text-danger">*</span>Shipping Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="ShippingAddress">
+                    <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"><span class="text-danger">*</span>User ID</label>
+                <div class="col-sm-10">
+                    <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                        <option value="">Select User</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <a class="btn btn-success" asp-controller="Order" asp-action="OrderList">Back</a>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+
+        </form><!-- End General Form Elements -->
+
+    </div>
+</div>
+ *@
